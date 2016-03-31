@@ -38,6 +38,7 @@
 		625873E71CABFB05003E5483 /* MTreeViewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625873881CABCFBF003E5483 /* MTreeViewFramework.framework */; };
 		62929F891CAC473800F09CF6 /* MTreeNode+ExpandNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 62929F871CAC473800F09CF6 /* MTreeNode+ExpandNode.h */; };
 		62929F8A1CAC473800F09CF6 /* MTreeNode+ExpandNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 62929F881CAC473800F09CF6 /* MTreeNode+ExpandNode.m */; };
+		62AF8B741CAD434400466A29 /* TestTreeViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AF8B731CAD434400466A29 /* TestTreeViewUITests.m */; };
 		62D2EE7A1CACBE3E0006B8DC /* QQContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2EE791CACBE3E0006B8DC /* QQContactViewController.m */; };
 		62D2EE7D1CACBE630006B8DC /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2EE7C1CACBE630006B8DC /* FileViewController.m */; };
 		62D2EE801CACBE830006B8DC /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2EE7F1CACBE830006B8DC /* TestViewController.m */; };
@@ -55,6 +56,13 @@
 			remoteInfo = MTreeViewFramework;
 		};
 		625873C41CABD031003E5483 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6258737F1CABCFBF003E5483 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 625873AA1CABD031003E5483;
+			remoteInfo = TestTreeView;
+		};
+		62AF8B761CAD434400466A29 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6258737F1CABCFBF003E5483 /* Project object */;
 			proxyType = 1;
@@ -89,6 +97,9 @@
 		625873E41CABD564003E5483 /* MTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTreeNode.m; sourceTree = "<group>"; };
 		62929F871CAC473800F09CF6 /* MTreeNode+ExpandNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTreeNode+ExpandNode.h"; sourceTree = "<group>"; };
 		62929F881CAC473800F09CF6 /* MTreeNode+ExpandNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTreeNode+ExpandNode.m"; sourceTree = "<group>"; };
+		62AF8B711CAD434400466A29 /* TestTreeViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTreeViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62AF8B731CAD434400466A29 /* TestTreeViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTreeViewUITests.m; sourceTree = "<group>"; };
+		62AF8B751CAD434400466A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D2EE781CACBE3E0006B8DC /* QQContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQContactViewController.h; sourceTree = "<group>"; };
 		62D2EE791CACBE3E0006B8DC /* QQContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQContactViewController.m; sourceTree = "<group>"; };
 		62D2EE7B1CACBE630006B8DC /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
@@ -133,6 +144,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62AF8B6E1CAD434400466A29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -143,6 +161,7 @@
 				625873961CABCFBF003E5483 /* MTreeViewFrameworkTests */,
 				625873AC1CABD031003E5483 /* TestTreeView */,
 				625873C61CABD031003E5483 /* TestTreeViewTests */,
+				62AF8B721CAD434400466A29 /* TestTreeViewUITests */,
 				625873891CABCFBF003E5483 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +173,7 @@
 				625873921CABCFBF003E5483 /* MTreeViewFrameworkTests.xctest */,
 				625873AB1CABD031003E5483 /* TestTreeView.app */,
 				625873C31CABD031003E5483 /* TestTreeViewTests.xctest */,
+				62AF8B711CAD434400466A29 /* TestTreeViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +252,15 @@
 				625873E01CABD0C0003E5483 /* MTreeView.m */,
 			);
 			path = MTreeView;
+			sourceTree = "<group>";
+		};
+		62AF8B721CAD434400466A29 /* TestTreeViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				62AF8B731CAD434400466A29 /* TestTreeViewUITests.m */,
+				62AF8B751CAD434400466A29 /* Info.plist */,
+			);
+			path = TestTreeViewUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +351,24 @@
 			productReference = 625873C31CABD031003E5483 /* TestTreeViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		62AF8B701CAD434400466A29 /* TestTreeViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62AF8B7A1CAD434400466A29 /* Build configuration list for PBXNativeTarget "TestTreeViewUITests" */;
+			buildPhases = (
+				62AF8B6D1CAD434400466A29 /* Sources */,
+				62AF8B6E1CAD434400466A29 /* Frameworks */,
+				62AF8B6F1CAD434400466A29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62AF8B771CAD434400466A29 /* PBXTargetDependency */,
+			);
+			name = TestTreeViewUITests;
+			productName = TestTreeViewUITests;
+			productReference = 62AF8B711CAD434400466A29 /* TestTreeViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -347,6 +394,10 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 625873AA1CABD031003E5483;
 					};
+					62AF8B701CAD434400466A29 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 625873AA1CABD031003E5483;
+					};
 				};
 			};
 			buildConfigurationList = 625873821CABCFBF003E5483 /* Build configuration list for PBXProject "MTreeViewFramework" */;
@@ -367,6 +418,7 @@
 				625873911CABCFBF003E5483 /* MTreeViewFrameworkTests */,
 				625873AA1CABD031003E5483 /* TestTreeView */,
 				625873C21CABD031003E5483 /* TestTreeViewTests */,
+				62AF8B701CAD434400466A29 /* TestTreeViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -398,6 +450,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		625873C11CABD031003E5483 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62AF8B6F1CAD434400466A29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -464,6 +523,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62AF8B6D1CAD434400466A29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62AF8B741CAD434400466A29 /* TestTreeViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -476,6 +543,11 @@
 			isa = PBXTargetDependency;
 			target = 625873AA1CABD031003E5483 /* TestTreeView */;
 			targetProxy = 625873C41CABD031003E5483 /* PBXContainerItemProxy */;
+		};
+		62AF8B771CAD434400466A29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 625873AA1CABD031003E5483 /* TestTreeView */;
+			targetProxy = 62AF8B761CAD434400466A29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -709,6 +781,28 @@
 			};
 			name = Release;
 		};
+		62AF8B781CAD434400466A29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TestTreeViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.micker.TestTreeViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TestTreeView;
+			};
+			name = Debug;
+		};
+		62AF8B791CAD434400466A29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TestTreeViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.micker.TestTreeViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TestTreeView;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -765,6 +859,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		62AF8B7A1CAD434400466A29 /* Build configuration list for PBXNativeTarget "TestTreeViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62AF8B781CAD434400466A29 /* Debug */,
+				62AF8B791CAD434400466A29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
