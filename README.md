@@ -22,3 +22,12 @@
 - 
 
 * 1、MTreeViewFramework 最低支持版本为7.0;
+
+
+三、效果
+-
+
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/1.jpg" width="80%">
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/2.jpg" width="80%">
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/3.jpg" width="80%">
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/4.jpg" width="80%">
