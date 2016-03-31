@@ -1,0 +1,6 @@
+framework module MTreeViewFramework {
+  umbrella header "MTreeViewFramework.h"
+
+  export *
+  module * { export * }
+}
