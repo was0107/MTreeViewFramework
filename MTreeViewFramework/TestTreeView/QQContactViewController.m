@@ -8,6 +8,9 @@
 
 #import "QQContactViewController.h"
 #import "ContactTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define DegreesToRadians(degrees) (degrees * M_PI / 180)
 
 static NSString *QQContactViewControllerNode = @"QQContactViewControllerNode";
 
@@ -75,6 +78,7 @@ static NSString *QQContactViewControllerNode = @"QQContactViewControllerNode";
         tipImageView.image = [UIImage imageNamed:@"tip"];
         tipImageView.tag = 10;
         [sectionView addSubview:tipImageView];
+        [self doTipImageView:tipImageView expand:subNode.expand];
     }
     {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, 10, 200, 30)];
@@ -114,9 +118,18 @@ static NSString *QQContactViewControllerNode = @"QQContactViewControllerNode";
 #pragma mark --
 #pragma mark Action
 
+- (void) doTipImageView:(UIImageView *)imageView expand:(BOOL) expand {
+    [UIView animateWithDuration:0.2f animations:^{
+        imageView.transform = (expand) ? CGAffineTransformMakeRotation(DegreesToRadians(90)) : CGAffineTransformIdentity;
+    }];
+}
+
 - (void)sectionTaped:(UIGestureRecognizer *) recognizer {
     UIView *view = recognizer.view;
     NSUInteger tag = view.tag - 1000;
+    UIImageView *tipImageView = [view viewWithTag:10];
+    MTreeNode *subNode = [self.treeView nodeAtIndexPath:[NSIndexPath indexPathForRow:-1 inSection:tag]];
     [self.treeView expandNodeAtIndexPath:[NSIndexPath indexPathForRow:-1 inSection:tag]];
+    [self doTipImageView:tipImageView expand:subNode.expand];
 }
 @end

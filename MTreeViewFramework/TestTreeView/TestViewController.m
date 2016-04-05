@@ -52,7 +52,7 @@ static NSString *TestViewControllerNode = @"TestViewControllerNode";
     label.userInteractionEnabled = YES;
     label.text = [NSString stringWithFormat:@" %@级类目：%@",@(subNode.depth), @(section)];
     label.backgroundColor = [UIColor whiteColor];
-    NSLog(@"%@", label.text);
+//    NSLog(@"%@", label.text);
     return label;
 }
 
@@ -61,8 +61,7 @@ static NSString *TestViewControllerNode = @"TestViewControllerNode";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TestViewControllerNode];
     cell.separatorInset = UIEdgeInsetsMake(0, subNode.depth * 20.0f, 0, 0);
     cell.textLabel.text = [NSString stringWithFormat:@" %@级类目：%@",@(subNode.depth), @(indexPath.row)];
-    NSLog(@"==%@", cell.textLabel.text);
-
+//    NSLog(@"==%@", cell.textLabel.text);
     return cell;
 }
 

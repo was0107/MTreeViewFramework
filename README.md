@@ -26,7 +26,9 @@
 
 三、效果
 -
-
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/auto.gif" width="80%">
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/qq.gif" width="80%">
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/file.gif" width="80%">
 <img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/1.jpg" width="80%">
 <img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/2.jpg" width="80%">
 <img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/3.jpg" width="80%">
