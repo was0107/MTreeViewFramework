@@ -12,7 +12,12 @@
 @implementation MTreeNode (ExpandNode)
 
 - (NSMutableArray *) expandNodes {
-    return objc_getAssociatedObject(self, _cmd);
+    NSMutableArray *array = objc_getAssociatedObject(self, _cmd);
+    if (!array) {
+        array = [NSMutableArray arrayWithCapacity:2];
+        [self setExpandNodes:array];
+    }
+    return array;
 }
 
 - (void) setExpandNodes:(NSMutableArray *)expandNodes {
@@ -20,9 +25,6 @@
 }
 
 - (NSArray *) getSubExpandNodes {
-    if (!self.expandNodes) {
-        self.expandNodes = [NSMutableArray arrayWithCapacity:2];
-    }
     [self.expandNodes removeAllObjects];
     [self __computeExpandFromNode:self];
     return self.expandNodes;
