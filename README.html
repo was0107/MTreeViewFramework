@@ -1015,8 +1015,7 @@ body .markdown-body
   }
 }
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="mtreeviewframework"><a name="user-content-mtreeviewframework" href="#mtreeviewframework" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MTreeViewFramework</h1>
-<p>树型结构的列表<br />
-<a href="https://github.com/was0107/treeTableView">https://github.com/was0107/treeTableView</a></p>
+<p><a href="https://github.com/was0107/treeTableView">树型结构的列表</a></p>
 <h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>需求</h2>
 <ul>
 <li>模仿QQ联系人页面，实现展开折叠效果；</li>
@@ -1024,15 +1023,14 @@ body .markdown-body
 <h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>分析</h2>
 <ul>
 <li>很明显QQ的联系人界面，使用的是二层树型结构进行展示，另加上展开与折叠来进行当前节点及子节点是否展示；</li>
-<li>由于是列表类型，使用UITableView来进行列表展示再好不过，</li>
-<li>在分类折叠过程中，具有折叠效果，且具有吸附效果，可以使用UITableView 的Section Header进行实现；</li>
+<li>由于是列表类型，使用<code>UITableView</code>来进行列表展示再好不过，</li>
+<li>在分类折叠过程中，具有折叠效果，且具有吸附效果，可以使用<code>UITableView</code>的Section Header进行实现；</li>
 <li>由于是树型结构，故需要定义一个根节点，由根节点延伸出各子孙节点</li>
 </ul>
 <h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>实现</h2>
 <ul>
-<li>
-<p>1、定义树型结构的节点，目前根节点和叶子节点共用同一个数据模型</p>
-<pre><code>@interface MTreeNode : NSObject
+<li>1、定义树型结构的节点，目前根节点和叶子节点共用同一个数据模型<br />
+<pre><code class="objective-c">@interface MTreeNode : NSObject
 @property (nonatomic, readwrite, assign) BOOL expand;  // 返回当前节点是否已经展开，默认为NO
 @property (nonatomic, readonly, assign) NSInteger depth; // 返回当前节点深度,默认为0，根节点为-1
 @property (nonatomic, readonly, weak) MTreeNode *parentNode; // 返回当前节点的爷节点
@@ -1043,24 +1041,24 @@ body .markdown-body
 + (instancetype)initWithParent:(MTreeNode *) parent expand:(BOOL) expand;
 - (void) toggle;
 @end
-</code></pre>
-</li>
+</code></pre></li>
 <li>
-<p>2、由以上的数据结构可知，当前节点的subNodes仅保存了当前节点的信息，对于其子孙节点信息均未能呈现，需要另外定义一个数据来进行管理，为不混淆当前节点的子节点与子孙节点，另使用Category来声明子孙节点</p>
-<pre><code>@interface MTreeNode (ExpandNode)
+<p>2、由以上的数据结构可知，当前节点的subNodes仅保存了当前节点的信息，对于其子孙节点信息均未能呈现，需要另外定义一个数据来进行管理，为不混淆当前节点的子节点与子孙节点，另使用<code>Category</code>来声明子孙节点<br />
+<pre><code class="objective-c">@interface MTreeNode (ExpandNode)
 @property (nonatomic, strong) NSMutableArray *expandNodes;      //存储当前节点之下展开的节点
 
 - (NSArray *) getSubExpandNodes;
 @end
-</code></pre>
+</code></pre></p>
 </li>
 <li>
-<p>3、MTreeView继承UITableView，声明一个根节点，及相应的方法</p>
-<pre><code>@interface MTreeView : UITableView
+<p>3、<code>MTreeView</code>继承<code>UITableView</code>，声明一个根节点，及相应的方法<br />
+<pre><code class="objective-c">@interface MTreeView : UITableView
 
 @property (nonatomic, readwrite, strong) MTreeNode *rootNode;           //根节点
 
 @property (nonatomic, readwrite, weak) IBOutlet id&lt;MTreeViewDelegate&gt; treeViewDelegate;
+
 
 /**
  *  返回根节点的子节点数，即深度为0的节点数
@@ -1106,16 +1104,17 @@ body .markdown-body
  *
  */
 - (MTreeNode *) nodeAtIndexPath:(NSIndexPath *)indexPath;
-</code></pre>
-<p>@end</p>
-<p>首先需要弄清楚，树型结构上的各节点，在UITableView是如何进行布局的，<br />
-根节点（深度为-1）管理所有数据，在界面上不呈现；<br />
-0级节点（深度为0）管理一级数据，对应的是Section数据；<br />
-一..N级节点（深度为1..n），对应的是UITableViewCell，进行呈现；UITableViewCell根据深度，进行UI及逻辑的控制；</p>
+
+@end
+</code></pre><br />
+    首先需要弄清楚，树型结构上的各节点，在UITableView是如何进行布局的，<br />
+    根节点（深度为-1）管理所有数据，在界面上不呈现；<br />
+    0级节点（深度为0）管理一级数据，对应的是Section数据；<br />
+    一..N级节点（深度为1..n），对应的是<code>UITableViewCell</code>，进行呈现；<code>UITableViewCell</code>根据深度，进行UI及逻辑的控制；</p>
 </li>
 <li>
-<p>4、在构造树的数据时，为满足叶子节点可动态增加，及动画处理，故在此设计一个回调，供业务方进行使用；</p>
-<pre><code>@protocol MTreeViewDelegate &lt;NSObject&gt;
+<p>4、在构造树的数据时，为满足叶子节点可动态增加，及动画处理，故在此设计一个回调，供业务方进行使用；<br />
+<pre><code class="objective-c">@protocol MTreeViewDelegate &lt;NSObject&gt;
 
 @optional
 
@@ -1129,6 +1128,7 @@ body .markdown-body
  */
 - (void) treeView:(MTreeView *)treeView willexpandNodeAtIndexPath:(NSIndexPath *)indexPath;
 
+
 /**
  *  已经展开/关闭子节点，此代理可以于此进行动画效果的设置
  *
@@ -1140,7 +1140,7 @@ body .markdown-body
 - (void) treeView:(MTreeView *)treeView didexpandNodeAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
-</code></pre>
+</code></pre></p>
 </li>
 </ul>
 <h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>测试</h2>
