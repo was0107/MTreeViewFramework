@@ -4,6 +4,11 @@
 ##需求
 *  模仿QQ联系人页面，实现展开折叠效果；
 
+##测试
+提供三种测试情况，一为随机组织数据，二为QQ联系人界面，三为沙盒文件查看，其中前两者数据为静态数据，沙盒数据由点击查看进行数据的动态生成，且仅生成一次。效果请参照下图<br>
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/qq.gif" width="50%" ><br>
+<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/file.gif" width="50%">
+
 ##分析
 *	很明显QQ的联系人界面，使用的是二层树型结构进行展示，另加上展开与折叠来进行当前节点及子节点是否展示；
 *	由于是列表类型，使用`UITableView`来进行列表展示再好不过，
@@ -124,12 +129,6 @@
 
 @end
 ```
-
-##测试
-提供三种测试情况，一为随机组织数据，二为QQ联系人界面，三为沙盒文件查看，其中前两者数据为静态数据，沙盒数据由点击查看进行数据的动态生成，且仅生成一次。效果请参照下图
-
-<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/qq.gif" width="50%" >
-<img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/file.gif" width="50%">
 
 ##使用
 
