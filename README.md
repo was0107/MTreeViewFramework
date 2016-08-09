@@ -4,7 +4,7 @@
 ##需求
 *  模仿QQ联系人页面，实现展开折叠效果；
 
-##测试
+##效果图展示
 提供三种测试情况，一为随机组织数据，二为QQ联系人界面，三为沙盒文件查看，其中前两者数据为静态数据，沙盒数据由点击查看进行数据的动态生成，且仅生成一次。效果请参照下图<br>
 <img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/qq.gif" width="50%" ><br>
 <img src="https://raw.githubusercontent.com/was0107/treeTableView/master/images/file.gif" width="50%">
@@ -134,8 +134,3 @@
 
 *	1、此项目依赖SDK最低版本为7.0；
 *	2、在工程中引入MTreeViewFramework.framework即可使用；
-
-
-
-
-
